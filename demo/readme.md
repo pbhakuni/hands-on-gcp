@@ -47,10 +47,13 @@ https://cloud.google.com/pubsub/docs/quickstart-client-libraries
     
     4. Create a topic in Pubsub in GCP portal
 
-  Run the maven project using mvn compile and provide the needed arguments
-  
-  ```
-  [INFO] Scanning for projects...
+Sample Run
+----------
+
+Cloud Storage: Run the maven project using mvn compile and provide the needed arguments
+
+```
+[INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------------< com.example:DataLoad >------------------------
 [INFO] Building DataLoad 1
@@ -92,4 +95,37 @@ Id: 3713877373179199
 Id: 3713876979325504
 --- Completed - Receiver processing ---
 Inside main class - Processed successfully
+```
+
+Bigquery: Run the maven project using mvn compile and provide the needed arguments
+
+```
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------< com.example:DataLoad >------------------------
+[INFO] Building DataLoad 1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ DataLoad ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\1029565\Documents\GCP Learning\PubsubandGCS\code\demo\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ DataLoad ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\1029565\Documents\GCP Learning\PubsubandGCS\code\demo\target\classes
+[INFO]
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ DataLoad ---
+Inside main class - Processing begins for bigquery
+
+Table export successful. Check in GCS bucket for the CSV file.
+Downloaded object furtinure.csv from bucket name bucket-csv-1 to C:\Users\1029565\Documents\GCP Learning\PubsubandGCS\furtinure.csv
+File modified and copied to locationC:\Users\1029565\Documents\GCP Learning\PubsubandGCS\furtinure_latest.csv
+Reinserting the data to bigquery - tablename: furtinure
+Total rows inserted to bigquery: 3694
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.841 s
+[INFO] Finished at: 2021-12-13T14:05:57+05:30
+[INFO] ------------------------------------------------------------------------
 ```
